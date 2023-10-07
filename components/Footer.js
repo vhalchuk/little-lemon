@@ -1,25 +1,26 @@
 import { Text, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
-export default function Header() {
+export default function Footer() {
   const insets = useSafeAreaInsets();
 
   return (
     <View
       style={{
+        marginTop: 30,
         padding: 16,
-        paddingTop: insets.top + 16,
-        backgroundColor: "#e0ffab",
+        backgroundColor: "#f6f6f6",
+        paddingBottom: insets.bottom,
       }}
     >
       <Text
         style={{
-          fontSize: 28,
+          fontSize: 14,
           color: "black",
           textAlign: "center",
         }}
       >
-        Little Lemon Restaurant
+        All rights reserved by Little Lemon, 2023
       </Text>
     </View>
   );
