@@ -7,7 +7,6 @@ export default function Footer() {
   return (
     <View
       style={{
-        marginTop: 30,
         padding: 16,
         backgroundColor: "#f6f6f6",
         paddingBottom: insets.bottom,

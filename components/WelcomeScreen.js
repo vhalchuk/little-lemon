@@ -6,7 +6,7 @@ export default function WelcomeScreen() {
       <View style={{ padding: 16 }}>
         <Text
           style={{
-            fontSize: 24,
+            fontSize: 52,
             color: "black",
             textAlign: "center",
           }}
@@ -17,7 +17,7 @@ export default function WelcomeScreen() {
       <View style={{ padding: 16 }}>
         <Text
           style={{
-            fontSize: 18,
+            fontSize: 40,
             color: "black",
             textAlign: "center",
           }}
