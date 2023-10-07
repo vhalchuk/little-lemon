@@ -5,22 +5,22 @@ export default function Footer() {
   const insets = useSafeAreaInsets();
 
   return (
-    <View
-      style={{
-        padding: 16,
-        backgroundColor: "#f6f6f6",
-        paddingBottom: insets.bottom,
-      }}
-    >
-      <Text
-        style={{
-          fontSize: 14,
-          color: "black",
-          textAlign: "center",
-        }}
-      >
-        All rights reserved by Little Lemon, 2023
-      </Text>
+    <View style={getContainerStyles(insets.bottom)}>
+      <Text style={styles.text}>All rights reserved by Little Lemon, 2023</Text>
     </View>
   );
 }
+
+const getContainerStyles = (paddingBottom) => ({
+  padding: 16,
+  backgroundColor: "#f6f6f6",
+  paddingBottom,
+});
+
+const styles = StyleSheet.create({
+  text: {
+    fontSize: 14,
+    color: "black",
+    textAlign: "center",
+  },
+});

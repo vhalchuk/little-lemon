@@ -5,22 +5,22 @@ export default function Header() {
   const insets = useSafeAreaInsets();
 
   return (
-    <View
-      style={{
-        padding: 16,
-        paddingTop: insets.top + 16,
-        backgroundColor: "#e0ffab",
-      }}
-    >
-      <Text
-        style={{
-          fontSize: 28,
-          color: "black",
-          textAlign: "center",
-        }}
-      >
-        Little Lemon Restaurant
-      </Text>
+    <View style={getContainerStyles(insets.top + 16)}>
+      <Text style={styles.text}>Little Lemon Restaurant</Text>
     </View>
   );
 }
+
+export const getContainerStyles = (paddingTop) => ({
+  padding: 16,
+  paddingTop,
+  backgroundColor: "#e0ffab",
+});
+
+const styles = StyleSheet.create({
+  text: {
+    fontSize: 28,
+    color: "black",
+    textAlign: "center",
+  },
+});
