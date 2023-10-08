@@ -1,10 +1,11 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, View } from "react-native";
 
 export default function WelcomeScreen() {
   return (
     <>
-      <View style={{ padding: 16 }}>
-        <Text style={styles.title}>Welcome to Little Lemon</Text>
+      <View style={styles.titleContainer}>
+        <Image style={styles.image} source={require("../img/logo.png")} />
+        <Text style={styles.title}>Little Lemon</Text>
       </View>
       <View style={{ padding: 16 }}>
         <Text style={styles.subtitle}>
@@ -18,13 +19,25 @@ export default function WelcomeScreen() {
 }
 
 const styles = StyleSheet.create({
+  titleContainer: {
+    padding: 16,
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    columnGap: 16,
+  },
+  image: {
+    height: 64,
+    width: 64,
+    resizeMode: "contain",
+  },
   title: {
-    fontSize: 52,
+    fontSize: 32,
     color: "black",
     textAlign: "center",
   },
   subtitle: {
-    fontSize: 40,
+    fontSize: 20,
     color: "black",
     textAlign: "center",
   },
