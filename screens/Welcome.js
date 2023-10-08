@@ -1,7 +1,7 @@
 import { Image, StyleSheet, Text, View } from "react-native";
 import logo from "../assets/logo.png";
 
-export default function WelcomeScreen() {
+export default function Welcome() {
   return (
     <>
       <View style={styles.titleContainer}>

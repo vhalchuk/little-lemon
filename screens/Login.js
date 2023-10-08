@@ -8,11 +8,12 @@ import {
   View,
 } from "react-native";
 import { useState } from "react";
+import { useNavigation } from "@react-navigation/native";
 
-export default function LoginForm() {
+export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [loggedIn, setLoggedIn] = useState(false);
+  const { replace } = useNavigation();
 
   return (
     <KeyboardAvoidingView
@@ -21,38 +22,30 @@ export default function LoginForm() {
     >
       <View style={{ flex: 1 }}>
         <Text style={styles.title}>Welcome to Little Lemon</Text>
-        {loggedIn && (
-          <Text style={styles.loggedInText}>You are logged in!</Text>
-        )}
-        {!loggedIn && (
-          <>
-            <Text style={styles.subtitle}>Login to continue</Text>
-            <TextInput
-              style={styles.input}
-              placeholder="email"
-              value={email}
-              onChangeText={setEmail}
-              keyboardType="email-address"
-              autoCapitalize="none"
-            />
-            <TextInput
-              style={styles.input}
-              placeholder="password"
-              secureTextEntry={true}
-              value={password}
-              onChangeText={setPassword}
-              keyboardType="default"
-            />
-            <View style={styles.buttonContainer}>
-              <Pressable
-                style={styles.button}
-                onPress={() => setLoggedIn(true)}
-              >
-                <Text style={styles.buttonText}>Log In</Text>
-              </Pressable>
-            </View>
-          </>
-        )}
+        <>
+          <Text style={styles.subtitle}>Login to continue</Text>
+          <TextInput
+            style={styles.input}
+            placeholder="email"
+            value={email}
+            onChangeText={setEmail}
+            keyboardType="email-address"
+            autoCapitalize="none"
+          />
+          <TextInput
+            style={styles.input}
+            placeholder="password"
+            secureTextEntry={true}
+            value={password}
+            onChangeText={setPassword}
+            keyboardType="default"
+          />
+          <View style={styles.buttonContainer}>
+            <Pressable style={styles.button} onPress={() => replace("Home")}>
+              <Text style={styles.buttonText}>Log In</Text>
+            </Pressable>
+          </View>
+        </>
       </View>
     </KeyboardAvoidingView>
   );
@@ -93,10 +86,6 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
   },
   buttonText: {
-    textAlign: "center",
-    fontSize: 24,
-  },
-  loggedInText: {
     textAlign: "center",
     fontSize: 24,
   },
