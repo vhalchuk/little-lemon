@@ -32,6 +32,7 @@ export default function MenuItems() {
       renderItem={({ item }) => {
         return (
           <View
+            key={item.id}
             style={{
               display: "flex",
               flexDirection: "row",
