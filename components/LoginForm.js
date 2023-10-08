@@ -1,6 +1,7 @@
 import {
   KeyboardAvoidingView,
   Platform,
+  Pressable,
   StyleSheet,
   Text,
   TextInput,
@@ -11,6 +12,7 @@ import { useState } from "react";
 export default function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [hasBeenPressed, setHasBeenPressed] = useState(false);
 
   return (
     <KeyboardAvoidingView
@@ -36,6 +38,19 @@ export default function LoginForm() {
           onChangeText={setPassword}
           keyboardType="default"
         />
+        <View style={styles.buttonContainer}>
+          {!hasBeenPressed && (
+            <Pressable
+              style={styles.button}
+              onPress={() => setHasBeenPressed(true)}
+            >
+              <Text style={styles.buttonText}>Log In</Text>
+            </Pressable>
+          )}
+          {hasBeenPressed && (
+            <Text style={styles.buttonText}>You are logged in!</Text>
+          )}
+        </View>
       </View>
     </KeyboardAvoidingView>
   );
@@ -64,5 +79,19 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 10,
     fontSize: 16,
+  },
+  buttonContainer: {
+    flexDirection: "row",
+    justifyContent: "center",
+  },
+  button: {
+    borderRadius: 8,
+    backgroundColor: "#fffbad",
+    paddingHorizontal: 28,
+    paddingVertical: 8,
+  },
+  buttonText: {
+    textAlign: "center",
+    fontSize: 24,
   },
 });
