@@ -1,10 +1,11 @@
 import { Image, StyleSheet, Text, View } from "react-native";
+import logo from "../assets/logo.png";
 
 export default function WelcomeScreen() {
   return (
     <>
       <View style={styles.titleContainer}>
-        <Image style={styles.image} source={require("../img/logo.png")} />
+        <Image style={styles.image} source={logo} />
         <Text style={styles.title}>Little Lemon</Text>
       </View>
       <View style={{ padding: 16 }}>
