@@ -25,6 +25,8 @@ export default function LoginForm() {
           placeholder="email"
           value={email}
           onChangeText={setEmail}
+          keyboardType="email-address"
+          autoCapitalize="none"
         />
         <TextInput
           style={styles.input}
@@ -32,6 +34,7 @@ export default function LoginForm() {
           secureTextEntry={true}
           value={password}
           onChangeText={setPassword}
+          keyboardType="default"
         />
       </View>
     </KeyboardAvoidingView>
